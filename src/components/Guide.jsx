@@ -73,6 +73,9 @@ export default function Guide({ t, onBack }) {
         <p>
           O Leitor de Processos lê a capa dos processos do Simlam/CAR, mostra os dados para você conferir e grava tudo em uma planilha. <strong>A leitura acontece dentro do seu computador</strong>: o documento não é enviado para a internet.
         </p>
+        <p className="sub">
+          <strong>Repositório GitHub:</strong> https://github.com/ElizaKOliveira/integracar-processos
+        </p>
 
         <nav className="toc" aria-label="Índice">
           <strong>Neste guia</strong>
