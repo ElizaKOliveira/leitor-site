@@ -99,7 +99,7 @@ export default function Guide({ t, onBack }) {
           </p>
 
           <details>
-            <summary>Quero conferir se o arquivo é original (recomendado)</summary>
+            <summary>Quero conferir se o arquivo é original</summary>
             <p>O código abaixo funciona como uma “impressão digital” do arquivo. Se a sua for igual à da página, o arquivo não foi alterado:</p>
             <p><code>{CFG.hash}</code></p>
             <p>
@@ -114,14 +114,13 @@ export default function Guide({ t, onBack }) {
           <ol className="passos">
             <li>
               <strong>Aviso do navegador.</strong> Ao terminar o download, o Chrome ou o Edge podem dizer que o arquivo “não é baixado com frequência” ou “pode ser perigoso”. Clique nos três pontinhos ao lado do arquivo e escolha <strong>Manter</strong> (no Edge, depois <strong>Manter mesmo assim</strong>).
-              <Shot name="01-aviso-navegador" hint="aviso de download no navegador, com a opção “Manter” visível" />
             </li>
             <li>
               <strong>Abra o arquivo</strong> baixado (duplo clique no <code>Setup-LeitorDeProcessos</code>, na pasta Downloads).
             </li>
             <li>
-              <strong>Tela azul “O Windows protegeu o computador”.</strong> Clique em <strong>Mais informações</strong> e, depois, em <strong>Executar assim mesmo</strong>. Ela aparece porque o instalador ainda não tem assinatura digital paga, e não indica problema.
-              <Shot name="02-smartscreen-1" hint="tela azul do SmartScreen com o link “Mais informações”" />
+              <strong>Tela “O Windows protegeu o computador”.</strong> Clique em <strong>Mais informações</strong> e, depois, em <strong>Executar assim mesmo</strong>. Ela aparece porque o instalador ainda não tem assinatura digital paga, e não indica problema.
+              <Shot name="02-smartscreen-1" hint="tela do SmartScreen com o link “Mais informações”" />
               <Shot name="03-smartscreen-2" hint="a mesma tela, com o botão “Executar assim mesmo”" />
             </li>
             <li>
@@ -135,7 +134,7 @@ export default function Guide({ t, onBack }) {
 
           <h3>O que acontece ao abrir</h3>
           <p>
-            Aparecem duas coisas: uma <strong>janela preta</strong> com o nome do programa e, em seguida, o <strong>navegador</strong> com o sistema pronto. A janela preta é o motor do programa: <strong>deixe-a aberta</strong> enquanto estiver trabalhando.
+            Aparecem duas coisas: um <strong>terminal (janela preta)</strong> com o nome do programa e, em seguida, o <strong>navegador</strong> com o sistema pronto. O terminal é o motor do programa: <strong>deixe-o aberto</strong> enquanto estiver trabalhando.
           </p>
           <Shot name="05-primeira-abertura" hint="a janela preta ao lado do navegador com o sistema aberto" />
         </div>
@@ -192,13 +191,12 @@ python launcher.py`}</code></pre>
           </details>
         </div>
 
-        {/* ============ 2. USAR ============ */}
         <h2 id="usar">2. Usar no dia a dia</h2>
 
         <h3>Ligar e desligar</h3>
         <ul className="so-win">
           <li><strong>Ligar:</strong> duplo clique no atalho <em>Leitor de Processos</em> da Área de Trabalho. Use sempre o atalho (não salve o endereço nos favoritos), porque o endereço pode mudar de um dia para o outro.</li>
-          <li><strong>Desligar:</strong> feche a janela preta. Fechar só o navegador não encerra o programa.</li>
+          <li><strong>Desligar:</strong> feche o terminal. Fechar só o navegador não encerra o programa.</li>
         </ul>
         <ul className="so-linux">
           <li><strong>Ligar:</strong> no terminal, dentro da pasta do projeto, <code>docker compose up -d</code>, e abra <strong>http://127.0.0.1:3000</strong>. Depois de reiniciar o computador, ele pode voltar sozinho; se não abrir, rode o comando de novo.</li>
@@ -301,10 +299,9 @@ python launcher.py`}</code></pre>
           <strong>Mudou o código do Apps Script?</strong> Só vale depois de <strong>Implantar → Gerenciar implantações → editar (lápis) → Nova versão</strong>. O endereço continua o mesmo.
         </p>
 
-        {/* ============ 4. ATUALIZAR ============ */}
         <h2 id="atualizar">4. Atualizar e desinstalar</h2>
         <ul className="so-win">
-          <li><strong>Atualizar:</strong> baixe o instalador novo nesta página e execute-o. Ele substitui a versão antiga, e <strong>seus dados e configurações são mantidos</strong>. Antes, feche a janela preta do programa.</li>
+          <li><strong>Atualizar:</strong> baixe o instalador novo nesta página e execute-o. Ele substitui a versão antiga, e <strong>seus dados e configurações são mantidos</strong>. Antes, feche o terminal do programa.</li>
           <li><strong>Desinstalar:</strong> <strong>Configurações do Windows → Aplicativos → Leitor de Processos → Desinstalar</strong>. Isso <strong>não apaga</strong> o seu <code>processos.csv</code> (em Documentos → Leitor de Processos) nem as configurações.</li>
         </ul>
         <ul className="so-linux">
@@ -312,7 +309,6 @@ python launcher.py`}</code></pre>
           <li><strong>Desinstalar:</strong> <code>docker compose down --rmi local</code> e, se quiser, apague a pasta do projeto. <strong>Guarde antes a pasta <code>dados</code></strong> se ainda precisar do <code>processos.csv</code>.</li>
         </ul>
 
-        {/* ============ 5. PROBLEMAS ============ */}
         <h2 id="problemas">5. Problemas comuns</h2>
 
         <details className="so-win">
@@ -321,13 +317,13 @@ python launcher.py`}</code></pre>
         </details>
 
         <details className="so-win">
-          <summary>Cliquei no atalho e nada aparece / a janela preta fechou sozinha</summary>
+          <summary>Cliquei no atalho e nada aparece / o terminal fechou sozinho</summary>
           <p>Dê um novo duplo clique no atalho e aguarde uns 20 segundos. Se persistir, veja a seção “Como pedir ajuda”.</p>
         </details>
 
         <details className="so-win">
           <summary>O navegador mostra “Não foi possível acessar esse site” ou o sistema diz “Não consegui falar com o leitor”</summary>
-          <p>O programa não está rodando (a janela preta foi fechada). Abra de novo pelo atalho da Área de Trabalho e <strong>use sempre o atalho</strong>, não os favoritos.</p>
+          <p>O programa não está rodando (o terminal foi fechado). Abra de novo pelo atalho da Área de Trabalho e <strong>use sempre o atalho</strong>, não os favoritos.</p>
         </details>
 
         <details className="so-win">
@@ -376,7 +372,6 @@ python launcher.py`}</code></pre>
         </ol>
         <p><strong>Não envie capas reais nem prints com CPF.</strong> Se precisar mostrar um documento, troque antes os dados por fictícios.</p>
 
-        {/* ============ 6. PRIVACIDADE ============ */}
         <h2 id="privacidade">6. Privacidade e seus dados</h2>
         <table>
           <tbody>
