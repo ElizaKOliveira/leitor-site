@@ -169,8 +169,6 @@ docker compose up -d --build`}</code></pre>
           <p>
             A primeira vez leva alguns minutos. Depois, abra no navegador <strong>http://127.0.0.1:3000</strong> (use exatamente esse endereço, com os números).
           </p>
-          <Shot name="12-linux-primeira-abertura" hint="o terminal com os comandos e o navegador com o sistema aberto no Linux" />
-
           <details>
             <summary>Prefiro rodar sem Docker (avançado)</summary>
             <p>
